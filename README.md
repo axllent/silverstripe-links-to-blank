@@ -1,11 +1,33 @@
-# Append target="_blank" using JavaScript for SilverStripe 3
-Extension to add JavaScript to all pages to add target="_blank" to all **outgoing** links, as well as all links to PDF, DOC, and Excel files
+# Append target="_blank" with JavaScript for SilverStripe
+
+Extension to automatically add JavaScript on all pages to add target="_blank" to all **outgoing** links,
+as well as "download links" such as PDF, ZIP, TAR, DOC, PPT and Excel files.
 
 ## Requirements
-* SilverStripe 3+
+
+- SilverStripe 3+
+
+## Installation
+
+Installation can be done either by composer or by manually downloading a release.
+
+### Via composer
+
+`composer require "axllent/silverstripe-links-to-blank:*"`
+
+### Manually
+
+1. Download the module from [the releases page](https://github.com/axllent/silverstripe-links-to-blank/releases).
+2. Extract the folder with contents into site's root directory. This is the one with framework and cms in it.
+3. Do a ?flush of your site
 
 ## Usage
-To link to the JavaScript resource add the following to your in your template(s) before &lt;/body&gt;
-<pre>$LinksToBlank</pre>
-or for inline (compressed) JavaScript add the following to your in your template(s) before &lt;/body&gt;
-<pre>$LinksToBlankInline</pre>
+
+By default the module will automatically include some compressed inline JavaScript into your page.
+If you prefer to include this as a resource instead then you can define this in a yaml config
+(eg: `mysite/_config/config.yml`):
+
+```
+LinksToBlank:
+  inline: false
+```

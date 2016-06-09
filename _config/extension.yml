@@ -1,6 +1,6 @@
 ---
 Name: LinksToBlankExt
 ---
-SiteTree:
+ContentController:
   extensions:
     - LinksToBlankExt
