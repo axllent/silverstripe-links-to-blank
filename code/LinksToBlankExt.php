@@ -6,38 +6,28 @@
  * Extension to inline JavaScript to all pages to add target="_blank"
  * to all outgoing links, as well as all links to PDF, DOC, and Excel files
  *
- * Usage:  add either $LinksToBlankInline to include the JS into your page,
- * or $LinksToBlank to include the JS as an external script to your template(s)
- *
  * License: MIT-style license http://opensource.org/licenses/MIT
  * Authors: Techno Joy development team (www.technojoy.co.nz)
  */
 
-class LinksToBlankExt extends SiteTreeExtension
+class LinksToBlankExt extends Extension
 {
 
     /*
-     * LinksToBlankInline
-     * Inserts a compressed inline javascript block to page
+     * Automatically initiate the code
      */
-    public function LinksToBlankInline()
+    public function onAfterInit()
     {
-        $script = $this->Compress(
-            @file_get_contents( dirname( dirname( __FILE__ ) ) . '/javascript/linkstoblank.js')
-        );
-
-        Requirements::customScript($script);
-    }
-
-    /*
-     * LinksToBlank
-     * adds a JavaScript file to the current page
-     */
-    public function LinksToBlank()
-    {
-        Requirements::javascript(
-            basename( dirname( dirname(__FILE__) ) ) . '/javascript/linkstoblank.js'
-        );
+        if (Config::inst()->get('LinksToBlank', 'inline')) {
+            $script = $this->Compress(
+                @file_get_contents(dirname(dirname(__FILE__)) . '/javascript/linkstoblank.js')
+            );
+            Requirements::customScript($script);
+        } else {
+            Requirements::javascript(
+                basename(dirname(dirname(__FILE__))) . '/javascript/linkstoblank.js'
+            );
+        }
     }
 
     /*
@@ -63,7 +53,6 @@ class LinksToBlankExt extends SiteTreeExtension
             '/\s<\s?/' => '<',
             '/\s>\s?/' => '>',
         );
-
-        return preg_replace( array_keys($repl), array_values($repl), $data );
+        return preg_replace(array_keys($repl), array_values($repl), $data);
     }
 }
