@@ -52,6 +52,7 @@ class LinksToBlankExt extends Extension
             '/\s?\|\s?/' => '|',
             '/\s<\s?/' => '<',
             '/\s>\s?/' => '>',
+            '/(\s{2,})/' => '' // tabs / multiple spaces
         );
         return preg_replace(array_keys($repl), array_values($repl), $data);
     }

@@ -3,6 +3,8 @@
 Extension to automatically add JavaScript on all pages to add target="_blank" to all **outgoing** links,
 as well as "download links" such as PDF, ZIP, TAR, DOC, PPT and Excel files.
 
+For security, it also adds `rel="[noopener]` to the links to prevent cross-site exploit ([see here](https://mathiasbynens.github.io/rel-noopener/)).
+
 ## Requirements
 
 - SilverStripe 3+
