@@ -26,7 +26,7 @@ Installation can be done either by composer or by manually downloading a release
 ## Usage
 
 By default the module will automatically include some compressed inline JavaScript into your page.
-If you prefer to include this as a resource instead then you can define this in a yaml config
+If you prefer to include this as a separate JS file instead then you can define this in a yaml config
 (eg: `mysite/_config/config.yml`):
 
 ```
