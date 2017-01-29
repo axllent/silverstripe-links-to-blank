@@ -14,7 +14,12 @@
 	"support": {
 		"issues": "https://github.com/axllent/silverstripe-links-to-blank/issues"
 	},
-	"require": {
-		"silverstripe/framework": ">=3"
-	}
+    "require": {
+		"silverstripe/cms": "^4.0@dev"
+	},
+    "autoload": {
+        "psr-4": {
+            "Axllent\\LinksToBlank\\": "src/"
+        }
+    }
 }
