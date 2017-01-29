@@ -1,6 +1,6 @@
 ---
-Name: LinksToBlankExt
+Name: linkstoblank
 ---
-ContentController:
+SilverStripe\CMS\Controllers\ContentController:
   extensions:
-    - LinksToBlankExt
+    - Axllent\LinksToBlank\LinksToBlank

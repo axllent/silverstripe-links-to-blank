@@ -7,7 +7,7 @@ For security, it also adds `rel="[noopener]` to the links to prevent cross-site 
 
 ## Requirements
 
-- SilverStripe 3+
+- SilverStripe 4+
 
 ## Installation
 
@@ -15,7 +15,7 @@ Installation can be done either by composer or by manually downloading a release
 
 ### Via composer
 
-`composer require "axllent/silverstripe-links-to-blank:*"`
+`composer require "axllent/silverstripe-links-to-blank"`
 
 ### Manually
 
@@ -30,6 +30,6 @@ If you prefer to include this as a separate JS file instead then you can define 
 (eg: `mysite/_config/config.yml`):
 
 ```
-LinksToBlank:
+Axllent\LinksToBlank\LinksToBlank:
   inline: false
 ```
