@@ -1,6 +1,8 @@
 function _l2b() {
     var l = document.getElementsByTagName("a");
-    for (let a of l) {
+    var len = l.length;
+    for (i=0; i<len; ++i) {
+        var a = l[i];
         if (a.href && !a.target && (a.href.indexOf(location.host) == -1 && a.href.match(/^https?\:\/\//i)) ||
             a.href.match(/\.(pdf|docx?|pp(s|tx?)|xlsx?|zip|gz|bz2|(r|t)ar|7z)$/i)
         ) {
