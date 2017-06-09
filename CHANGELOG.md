@@ -14,6 +14,11 @@ Notable changes to this project will be documented in this file.
 - Rewrite some of the internals
 - Update docs
 
+---
+
+## [1.2.3]
+- Prevent IE9 JS error
+
 ## [1.2.2]
 - Prevent overwriting `rel` if it was already set to something other than noopener
 - Sorter code
