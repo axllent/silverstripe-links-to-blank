@@ -2,6 +2,9 @@
 
 Notable changes to this project will be documented in this file.
 
+## [2.0.2]
+- Prevent IE9 JS error
+
 ## [2.0.1]
 - Prevent overwriting `rel` if it was already set to something other than noopener
 - Sorter code
