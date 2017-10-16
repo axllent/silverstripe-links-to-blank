@@ -28,14 +28,13 @@ class LinksToBlank extends Extension
     public function onAfterInit()
     {
         if (Config::inst()->get('Axllent\LinksToBlank\LinksToBlank', 'inline')) {
+            $file = ModuleResourceLoader::singleton()->resolvePath('axllent/silverstripe-links-to-blank: javascript/linkstoblank.js');
             $script = $this->Compress(
-                file_get_contents(Director::getAbsFile($this->getModuleBase() . '/javascript/linkstoblank.js'))
+                file_get_contents(Director::getAbsFile($file))
             );
             Requirements::customScript($script);
         } else {
-            Requirements::javascript(
-                $this->getModuleBase() . '/javascript/linkstoblank.js'
-            );
+            Requirements::javascript('axllent/silverstripe-links-to-blank: javascript/linkstoblank.js');
         }
     }
 
@@ -64,14 +63,5 @@ class LinksToBlank extends Extension
             '/(\s{2,})/' => '' // tabs / multiple spaces
         );
         return preg_replace(array_keys($repl), array_values($repl), $data);
-    }
-
-    /**
-    * Returns the base directory of this module
-    * @return string
-    */
-    private function getModuleBase()
-    {
-        return basename(dirname(dirname(__FILE__)));
     }
 }
