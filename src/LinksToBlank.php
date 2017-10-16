@@ -29,13 +29,17 @@ class LinksToBlank extends Extension
     public function onAfterInit()
     {
         if (Config::inst()->get('Axllent\LinksToBlank\LinksToBlank', 'inline')) {
-            $file = ModuleResourceLoader::singleton()->resolvePath('axllent/silverstripe-links-to-blank: javascript/linkstoblank.js');
+            $file = ModuleResourceLoader::singleton()->resolvePath(
+                'axllent/silverstripe-links-to-blank: javascript/linkstoblank.js'
+            );
             $script = $this->Compress(
                 file_get_contents(Director::getAbsFile($file))
             );
             Requirements::customScript($script);
         } else {
-            Requirements::javascript('axllent/silverstripe-links-to-blank: javascript/linkstoblank.js');
+            Requirements::javascript(
+                'axllent/silverstripe-links-to-blank: javascript/linkstoblank.js'
+            );
         }
     }
 
