@@ -21,7 +21,7 @@ use SilverStripe\View\Requirements;
 
 class LinksToBlank extends Extension
 {
-    private $inline = true;
+    private static $inline = true;
 
     /*
      * Automatically initiate the code
