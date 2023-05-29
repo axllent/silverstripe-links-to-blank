@@ -21,10 +21,15 @@ use SilverStripe\View\Requirements;
 
 class LinksToBlank extends Extension
 {
+    /**
+     * By default this will include inline JS
+     *
+     * @var boolean
+     */
     private static $inline = true;
 
     /*
-     * Automatically initiate the code
+     * Automatically inject the code
      */
     public function onAfterInit()
     {
@@ -48,7 +53,7 @@ class LinksToBlank extends Extension
      * @param str data
      * @return str
      */
-    protected function Compress($data)
+    protected function compress($data)
     {
         $repl = array(
             '/(\n|\t)/' => '',
@@ -67,6 +72,7 @@ class LinksToBlank extends Extension
             '/\s>\s?/' => '>',
             '/(\s{2,})/' => '' // tabs / multiple spaces
         );
+
         return preg_replace(array_keys($repl), array_values($repl), $data);
     }
 }
