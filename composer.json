@@ -1,23 +1,27 @@
 {
-	"name": "axllent/silverstripe-links-to-blank",
-	"description": "Extension to add JavaScript to all pages to add target=\"_blank\" to all outgoing links & downloads",
-	"type": "silverstripe-vendormodule",
-	"homepage": "https://github.com/axllent/silverstripe-links-to-blank",
-	"keywords": ["silverstripe", "javascript", "links"],
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Ralph Slooten",
-			"homepage": "http://www.axllent.org/"
-		}
-	],
-	"support": {
-		"issues": "https://github.com/axllent/silverstripe-links-to-blank/issues"
-	},
+    "name": "axllent/silverstripe-links-to-blank",
+    "description": "Extension to add JavaScript to all pages to add target=\"_blank\" to all outgoing links & downloads",
+    "type": "silverstripe-vendormodule",
+    "homepage": "https://github.com/axllent/silverstripe-links-to-blank",
+    "keywords": [
+        "silverstripe",
+        "javascript",
+        "links"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ralph Slooten",
+            "homepage": "http://www.axllent.org/"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/axllent/silverstripe-links-to-blank/issues"
+    },
     "require": {
-        "silverstripe/vendor-plugin": "^1.0",
-		"silverstripe/cms": "^4.0"
-	},
+        "silverstripe/vendor-plugin": "^1.0 || ^2.0",
+        "silverstripe/cms": "^4.0 || ^5.0"
+    },
     "extra": {
         "expose": [
             "javascript"
