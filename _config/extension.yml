@@ -1,6 +1,12 @@
 ---
-Name: linkstoblank
+Name: links-to-blank
+After:
+  - requestprocessors
 ---
-SilverStripe\CMS\Controllers\ContentController:
-  extensions:
-    - Axllent\LinksToBlank\LinksToBlank
+SilverStripe\Core\Injector\Injector:
+  LinksToBlankRequestProcessor:
+    class: Axllent\LinksToBlank\Middleware
+  SilverStripe\Control\Director:
+    properties:
+      Middlewares:
+        LinksToBlankRequestProcessor: "%$LinksToBlankRequestProcessor"
