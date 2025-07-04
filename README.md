@@ -1,4 +1,4 @@
-# Automatically set `target="\_blank"` for outgoing links in Silverstripe
+# Automatically set `target="_blank"` for outgoing & file links in Silverstripe
 
 This module enhances your HTML output by automatically adding `target="_blank"` to all **outgoing** links and internal "download links" (e.g., PDF, ZIP, TAR, DOC, PPT, and Excel files).
 
@@ -7,7 +7,7 @@ Earlier versions of this module used JavaScript for similar functionality, but t
 ## Features
 
 -   Automatically adds `target="_blank"` to outgoing and internal file links.
--   Includes `rel="noopener"` on outgoing links to prevent [cross-site exploits](https://mathiasbynens.github.io/rel-noopener/).
+-   Includes `rel="noopener"` to outgoing links to prevent [cross-site exploits](https://mathiasbynens.github.io/rel-noopener/).
 -   Optionally adds `rel="nofollow"` and `rel="noreferrer"` to outgoing links.
 -   Allows adding custom CSS classes to file and external links for styling.
 -   Supports adding additional file extensions for custom file types.
